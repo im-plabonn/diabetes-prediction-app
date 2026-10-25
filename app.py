@@ -113,7 +113,7 @@ if options == "1. Patient Prediction":
 
 # ----------------- SECTION 2: EDA & VISUALIZATIONS -----------------
 elif options == "2. EDA & Visualizations":
-    st.header("📊 Exploratory Data Analysis (EDA)")
+    st.header("Exploratory Data Analysis (EDA)")
     st.write("Visualizing feature distributions, correlations, and key relationships.")
     
     col1, col2 = st.columns(2)
@@ -149,7 +149,7 @@ elif options == "2. EDA & Visualizations":
 
 # ----------------- SECTION 3: CLUSTERING ANALYSIS -----------------
 elif options == "3. K-Means Clustering Analysis":
-    st.header("📌 K-Means Clustering Analysis")
+    st.header("K-Means Clustering Analysis")
     st.write("Unsupervised pattern discovery using K-Means algorithm to group patient profiles.")
     
     col1, col2 = st.columns(2)
@@ -192,7 +192,7 @@ elif options == "3. K-Means Clustering Analysis":
 
 # ----------------- SECTION 4: MODEL EVALUATION -----------------
 elif options == "4. SVM Model Evaluation":
-    st.header("📈 SVM Classification Performance Evaluation")
+    st.header("SVM Classification Performance Evaluation")
     st.write("Evaluating the Support Vector Machine (SVM) model using standard metrics.")
     
     y_pred = svm_eval.predict(X_test)
@@ -232,7 +232,7 @@ elif options == "4. SVM Model Evaluation":
 
 # ----------------- SECTION 5: DATASET OVERVIEW -----------------
 elif options == "5. Dataset Overview & Cleaning":
-    st.header("📋 Dataset Overview & Preprocessing")
+    st.header("Dataset Overview & Preprocessing")
     
     st.subheader("1. Cleaned Dataset Preview (First 10 Rows)")
     st.dataframe(df.head(10))
