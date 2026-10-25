@@ -2,11 +2,9 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Title & Description
 st.title("🩺 Disease Diagnosis - Diabetes Prediction")
 st.write("Enter patient details to predict Diabetes likelihood using SVM Model.")
 
-# Form Input Fields
 st.header("Patient Data Input")
 
 pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, value=1)
@@ -18,13 +16,16 @@ bmi = st.number_input("BMI (kg/m²)", min_value=0.0, max_value=70.0, value=25.0)
 pedigree = st.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=3.0, value=0.5)
 age = st.number_input("Age (years)", min_value=1, max_value=120, value=30)
 
-# Load Trained Model
+# Load Trained Model and Scaler
 model = joblib.load('diabetes_model.pkl')
+scaler = joblib.load('scaler.pkl')
 
-# Predict Button
 if st.button("Predict Outcome"):
-    input_data = np.array([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, pedigree, age]])
-    prediction = model.predict(input_data)
+    raw_input = np.array([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, pedigree, age]])
+    
+    # Scale input data before prediction
+    scaled_input = scaler.transform(raw_input)
+    prediction = model.predict(scaled_input)
     
     if prediction[0] == 1:
         st.error("⚠️ Result: High Risk of Diabetes (Positive)")
