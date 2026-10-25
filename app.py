@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🩺 Disease Diagnosis - Diabetes Prediction & Mining Pipeline")
+st.title("Disease Diagnosis - Diabetes Prediction & Mining Pipeline")
 st.write("An Interactive End-to-End Data Mining Web Application using the Pima Indians Diabetes Dataset.")
 
 # ----------------- DATA LOADING & PREPROCESSING -----------------
