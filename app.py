@@ -54,7 +54,7 @@ svm_eval = SVC(kernel='rbf', C=1.0, random_state=42)
 svm_eval.fit(X_train, y_train)
 
 # ----------------- NAVIGATION SIDEBAR -----------------
-st.sidebar.header("📌 Navigation Pipeline")
+st.sidebar.header("Navigation Pipeline")
 options = st.sidebar.radio(
     "Select Section:",
     [
@@ -68,7 +68,7 @@ options = st.sidebar.radio(
 
 # ----------------- SECTION 1: PATIENT PREDICTION -----------------
 if options == "1. Patient Prediction":
-    st.header("🔮 Patient Data Input & Prediction")
+    st.header("Patient Data Input & Prediction")
     st.write("Enter patient metrics to test Diabetes likelihood using the trained SVM Model.")
     
     col1, col2 = st.columns(2)
